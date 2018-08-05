@@ -1,0 +1,19 @@
+{% extends 'inventory/base.html' %}
+{% block content %}
+
+
+    <h1>Product Information</h1>
+
+        <div class="buttion_place">
+            <a href="{% url 'edit' product.pk %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Edit Product</a>
+        </div>
+
+       <label><h5>ip_address</h5></label>:  {{ product.ip_address }} <br>
+       <label><h5>info</h5></label>: {{ product.info }}<br>
+       <label><h5>hostname</h5></label>: {{ product.hostname }}<br>
+       <label><h5>able_to_ping</h5></label>: {{ product.able_to_ping }}<br>
+        <label><h5>able_to_login</h5></label>: {{ product.able_to_login }}<br>
+        <label><h5>physical_or_vm</h5></label>: {{ product.physical_or_vm }}<br>
+       <label><h5>issues</h5>{{ product.issues }}</label>
+
+{% endblock %}

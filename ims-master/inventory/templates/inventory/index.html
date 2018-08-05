@@ -1,0 +1,53 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+
+    <div class="buttion_place">
+        <a href="{% url 'addnew' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Add Product</a>
+    </div>
+
+    <div class = "swap_buttons">
+        <a href="{% url 'linux' %}" class="btn btn-primary btn-lg" role="button" aria-pressed="true"> Linux</a>
+        <a href="{% url 'windows' %}" class="btn btn-primary btn-lg" role="button" aria-pressed="true"> Windows</a>
+        <a href="{% url 'network' %}" class="btn btn-primary btn-lg" role="button" aria-pressed="true"> Network</a>
+    </div>
+
+    <h4 id = "table_display" style="font:italic bold 30px serif;">{{ header }}</h4>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>IP Address</th>
+            <th>Info1</th>
+            <th>Hostname</th>
+            <th>Able to Ping</th>
+            <th>Able to Login</th>
+            <th>Physical or VM</th>
+            <th>Issues</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+
+            <tr>
+                <th>
+                    <a href="{% url 'detail' product.pk %}">
+                        {{ product.pk }}
+                    </a>
+                </th>
+                <td>{{ product.ip_address }}</td>
+                <td>{{ product.info }}</td>
+                <td>{{ product.hostname }}</td>
+                <td>{{ product.able_to_ping }}</td>
+                <td>{{ product.able_to_login }}</td>
+                <td>{{ product.physical_or_vm }}</td>
+                <td>{{ product.issues }}</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
+
