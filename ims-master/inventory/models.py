@@ -9,6 +9,7 @@ class Product(models.Model):
     able_to_login = models.CharField(max_length=200,blank=True, null=True, default=' ')
     physical_or_vm = models.CharField(max_length=200, blank=True,null=True, default=' ')
     issues = models.CharField(max_length=200, blank=True,null=True, default='None')
+    type = models.CharField(max_length=200, blank=True, null=True, default='NaN')
 
     def __str__(self):
         return 'Id:{0} Name:{1}'.format(self.hostname, self.ip_address)
@@ -22,6 +23,7 @@ class Windows(models.Model):
     able_to_login = models.CharField(max_length=200,blank=True, null=True, default=' ')
     physical_or_vm = models.CharField(max_length=200, blank=True,null=True, default=' ')
     issues = models.CharField(max_length=200, blank=True,null=True, default='None')
+    type = models.CharField(max_length=200, blank=True, null=True, default='NaN')
 
     def __str__(self):
         return 'Id:{0} Name:{1}'.format(self.hostname, self.ip_address)
@@ -35,6 +37,7 @@ class Linux(models.Model):
     able_to_login = models.CharField(max_length=200,blank=True, null=True, default=' ')
     physical_or_vm = models.CharField(max_length=200, blank=True,null=True, default=' ')
     issues = models.CharField(max_length=200, blank=True,null=True, default='None')
+    type = models.CharField(max_length=200, blank=True, null=True, default='NaN')
 
     def __str__(self):
         return 'Id:{0} Name:{1}'.format(self.hostname, self.ip_address)
@@ -48,6 +51,7 @@ class Network(models.Model):
     able_to_login = models.CharField(max_length=200,blank=True, null=True, default=' ')
     physical_or_vm = models.CharField(max_length=200, blank=True,null=True, default=' ')
     issues = models.CharField(max_length=200, blank=True,null=True, default='None')
+    type = models.CharField(max_length=200, blank=True, null=True, default='NaN')
 
     def __str__(self):
         return 'Id:{0} Name:{1}'.format(self.hostname, self.ip_address)

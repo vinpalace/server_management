@@ -2,17 +2,25 @@
 
 {% block content %}
 
-    <div class="buttion_place">
-        <a href="{% url 'addnew' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Add Product</a>
+
+    <div class = "swap_buttons" style="width: 100%; " >
+        <div class = "button-group" style="float:left; width: 10%; ">
+            <a href="{% url 'linux' %}" class="btn btn-primary btn-md" role="button" aria-pressed="true" style="">  Linux </a>
+            <a href="{% url 'addnew_linux' %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true"> Add new</a>
+        </div>
+        <div class = "button-group" style="float:left; width: 10%;">
+            <a href="{% url 'windows' %}" class="btn btn-primary btn-md" role="button" aria-pressed="true"> Windows</a>
+            <a href="{% url 'addnew_windows' %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true"> Add new</a>
+        </div>
+        <div class = "button-group" style="float:left; width: 10%; padding-left: 20px;">
+            <a href="{% url 'network' %}" class="btn btn-primary btn-md" role="button" aria-pressed="true"> Network</a>
+            <a href="{% url 'addnew_network' %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true"> Add new</a>
+        </div>
     </div>
 
-    <div class = "swap_buttons">
-        <a href="{% url 'linux' %}" class="btn btn-primary btn-lg" role="button" aria-pressed="true"> Linux</a>
-        <a href="{% url 'windows' %}" class="btn btn-primary btn-lg" role="button" aria-pressed="true"> Windows</a>
-        <a href="{% url 'network' %}" class="btn btn-primary btn-lg" role="button" aria-pressed="true"> Network</a>
+    <div>
+        <h4 id = "table_display" style="font: bold 20px verdana;">{{ header }}</h4>
     </div>
-
-    <h4 id = "table_display" style="font:italic bold 30px serif;">{{ header }}</h4>
 
     <table class="table table-hover">
         <thead>
@@ -43,6 +51,9 @@
                 <td>{{ product.able_to_login }}</td>
                 <td>{{ product.physical_or_vm }}</td>
                 <td>{{ product.issues }}</td>
+                <td>
+                    <a href="{% url 'delete' product.pk product.type %}" class="btn btn-danger btn-sm" role="button" aria-pressed="true"> Delete</a>
+                </td>
             </tr>
         {% endfor %}
 

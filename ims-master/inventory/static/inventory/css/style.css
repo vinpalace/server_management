@@ -25,3 +25,11 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+.button-group{
+    text-align: center;
+    text-decoration: none;
+    display: table;
+    padding: 10px 24px;
+
+}
