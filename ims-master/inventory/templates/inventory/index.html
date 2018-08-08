@@ -32,9 +32,13 @@
             <th>Able to Ping</th>
             <th>Able to Login</th>
             <th>Physical or VM</th>
+            {% for product in products|slice:"1" %}
+            <th><a href="{% url 'update_status' product.type %}" class="status-button" role="button" aria-pressed="true" > Status </a> </th>
+            {% endfor %}
             <th>Issues</th>
         </tr>
         </thead>
+
         <tbody>
         {% for product in products %}
 
@@ -50,10 +54,22 @@
                 <td>{{ product.able_to_ping }}</td>
                 <td>{{ product.able_to_login }}</td>
                 <td>{{ product.physical_or_vm }}</td>
+                {% if product.status == "False" %}
+                <td>
+                    <button class="round-button-false" style="border-radius: 50%"></button>
+                </td>
+                {% else %}
+                <td>
+                    <button class="round-button-true" style="border-radius: 50%"></button>
+                </td>
+                {% endif %}
                 <td>{{ product.issues }}</td>
                 <td>
-                    <a href="{% url 'delete' product.pk product.type %}" class="btn btn-danger btn-sm" role="button" aria-pressed="true"> Delete</a>
+                    <a href="{% url 'delete' product.pk product.type %}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" style="border-radius: 50%"> x</a>
                 </td>
+
+
+
             </tr>
         {% endfor %}
 

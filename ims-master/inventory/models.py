@@ -9,6 +9,7 @@ class Product(models.Model):
     able_to_login = models.CharField(max_length=200,blank=True, null=True, default=' ')
     physical_or_vm = models.CharField(max_length=200, blank=True,null=True, default=' ')
     issues = models.CharField(max_length=200, blank=True,null=True, default='None')
+    status = models.CharField(max_length=6, default='False', blank=False, null=False)
     type = models.CharField(max_length=200, blank=True, null=True, default='NaN')
 
     def __str__(self):
@@ -23,6 +24,7 @@ class Windows(models.Model):
     able_to_login = models.CharField(max_length=200,blank=True, null=True, default=' ')
     physical_or_vm = models.CharField(max_length=200, blank=True,null=True, default=' ')
     issues = models.CharField(max_length=200, blank=True,null=True, default='None')
+    status = models.CharField(max_length=6, default='False', blank=False, null=False)
     type = models.CharField(max_length=200, blank=True, null=True, default='NaN')
 
     def __str__(self):
@@ -37,6 +39,7 @@ class Linux(models.Model):
     able_to_login = models.CharField(max_length=200,blank=True, null=True, default=' ')
     physical_or_vm = models.CharField(max_length=200, blank=True,null=True, default=' ')
     issues = models.CharField(max_length=200, blank=True,null=True, default='None')
+    status = models.CharField(max_length=6, default='False', blank=False, null=False)
     type = models.CharField(max_length=200, blank=True, null=True, default='NaN')
 
     def __str__(self):
@@ -50,6 +53,7 @@ class Network(models.Model):
     able_to_ping = models.CharField(max_length=200, blank=True,null=True, default=' ')
     able_to_login = models.CharField(max_length=200,blank=True, null=True, default=' ')
     physical_or_vm = models.CharField(max_length=200, blank=True,null=True, default=' ')
+    status = models.CharField(max_length=6, default='False', blank=False, null=False)
     issues = models.CharField(max_length=200, blank=True,null=True, default='None')
     type = models.CharField(max_length=200, blank=True, null=True, default='NaN')
 

@@ -33,3 +33,43 @@ body {
     padding: 10px 24px;
 
 }
+
+.round-button-false {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8px;
+    margin: 4px 2px;
+    border-radius: 50%
+}
+
+.round-button-true {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8px;
+    margin: 4px 2px;
+    border-radius: 50%
+}
+
+.status-button{
+
+    background-color: none;
+    border: 2px solid #000000;;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    border-radius: 50%
+}

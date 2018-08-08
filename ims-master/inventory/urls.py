@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^linux$', linux, name="linux"),
     url(r'^network$', network, name="network"),
     url(r'^delete/(?P<pk>\d+)/(?P<header>[\w\-]+)/$', delete, name="delete"),
+    url(r'^update_status/(?P<flag>[\w\-]+)/$', update_status, name="update_status")
 
 ]
